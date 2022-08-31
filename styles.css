@@ -11,8 +11,10 @@ body {
     --light-primary-color: #7290f3;
     --footer-bg-color: #141B41;
 
+    width: 100vw;
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -44,7 +46,9 @@ body::-webkit-scrollbar-button:active {
 }
 
 body.scrollable::-webkit-scrollbar-button:vertical:start:increment,
-body.scrollable::-webkit-scrollbar-button:vertical:end:decrement {
+body.scrollable::-webkit-scrollbar-button:vertical:end:decrement,
+body.scrollable::-webkit-scrollbar-button:horizontal:start:increment,
+body.scrollable::-webkit-scrollbar-button:horizontal:end:decrement {
     display: none;
 }
 
@@ -146,6 +150,25 @@ body.scrollable::-webkit-scrollbar-button:vertical:end:decrement {
     height: 100px;
     align-items: center;
     gap: 4rem;
+}
+
+@media (max-width: 320px) {
+    /* .na */
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nav .btn {
+        display: none;
+    }
+
+    .nav .nav__list {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .nav {
@@ -256,6 +279,7 @@ body.scrollable::-webkit-scrollbar-button:vertical:end:decrement {
     margin: 0 auto;
 }
 
+
 .full-screen-header .content,
 .full-screen-header .header__image {
     width: 50%;
@@ -272,6 +296,18 @@ body.scrollable::-webkit-scrollbar-button:vertical:end:decrement {
     color: var(--secondary-color);
 }
 
+
+@media (max-width: 320px) {
+    .full-screen-header {
+        height: initial;
+        flex-direction: column;
+    }
+
+    .full-screen-header .header__image {
+        display: none;
+
+    }
+}
 
 .section {
     padding-top: 2rem;
